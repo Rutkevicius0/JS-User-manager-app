@@ -29,3 +29,11 @@ export const deleteUser = async (userId) => {
     console.log(error);
   }
 };
+
+export const editUser = async (userId, updatedUserData) => {
+  try {
+    await axios.put(`${baseUrl}/edit/${userId}`, updatedUserData);
+  } catch (error) {
+    console.log(error);
+  }
+};
