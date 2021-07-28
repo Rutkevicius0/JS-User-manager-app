@@ -32,6 +32,7 @@ class UserForm extends Component {
   handleSubmit = async (event) => {
     event.preventDefault();
     this.props.onAddNewUser(this.state.newUserData);
+    this.handleClearForm();
     this.props.onToGetAllUsers();
   };
   render() {
@@ -41,7 +42,7 @@ class UserForm extends Component {
         <h2 className="form-title">Sukurti naują vartotoją</h2>
         <form onSubmit={this.handleSubmit}>
           <div className="form-group">
-            <label htmlFor="username">Username</label>
+            <label htmlFor="username">Vartotojo vardas</label>
             <input
               type="text"
               className="form-control"
@@ -51,7 +52,7 @@ class UserForm extends Component {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="age">Age</label>
+            <label htmlFor="age">Amžius</label>
             <input
               type="number"
               className="form-control"
@@ -61,7 +62,7 @@ class UserForm extends Component {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="email">Email address</label>
+            <label htmlFor="email">El. pašto adresas</label>
             <input
               type="email"
               className="form-control"
@@ -71,7 +72,7 @@ class UserForm extends Component {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="password">Password</label>
+            <label htmlFor="password">Slaptažodis</label>
             <input
               type="password"
               className="form-control"
@@ -81,7 +82,7 @@ class UserForm extends Component {
             />
           </div>
           <button type="submit" className="btn btn-primary">
-            Submit
+            Siųsti
           </button>
         </form>
       </div>

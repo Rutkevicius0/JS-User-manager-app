@@ -6,7 +6,7 @@ class UsersList extends Component {
   state = {};
   render() {
     return (
-      <div className="card-group">
+      <div className="users-list">
         {this.props.allUsers.map((u) => {
           return u.isEditOn === false ? (
             <SingleUser

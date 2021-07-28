@@ -13,13 +13,19 @@ class SingleUser extends Component {
           <p>{password}</p>
           <div>
             <button
+              className="btn btn-primary mr-1"
               onClick={() => {
                 this.props.onEdit(_id);
               }}
             >
-              Edit
+              Redaguoti
             </button>
-            <button onClick={() => this.props.onDelete(_id)}>Delete</button>
+            <button
+              className=" btn btn-danger"
+              onClick={() => this.props.onDelete(_id)}
+            >
+              Trinti
+            </button>
           </div>
         </div>
       </div>
