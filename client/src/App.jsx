@@ -2,7 +2,12 @@ import React, { Component } from 'react';
 import './App.css';
 import UserForm from './components/UserForm';
 import UsersList from './components/UsersList';
-import { getAllUsers, addNewUser, deleteUser } from './utilities/requests';
+import {
+  getAllUsers,
+  addNewUser,
+  deleteUser,
+  editUser,
+} from './utilities/requests';
 
 class App extends Component {
   state = {
@@ -19,7 +24,19 @@ class App extends Component {
     await deleteUser(id);
     this.toGetAllUsers();
   };
-
+  handleEdit = async (userId, updatedUserData) => {
+    const found = this.state.allUsers.find((user) => user._id === userId);
+    let updated = {};
+    if (found.isEditOn === false) {
+      updated = { ...found, isEditOn: true };
+      await editUser(userId, updated);
+    }
+    if (found.isEditOn === true) {
+      updated = { ...updatedUserData, isEditOn: false };
+      await editUser(userId, updated);
+    }
+    this.toGetAllUsers();
+  };
   render() {
     return (
       <div className="app-container">
@@ -31,6 +48,7 @@ class App extends Component {
         <UsersList
           allUsers={this.state.allUsers}
           onDelete={this.handleDelete}
+          onEdit={this.handleEdit}
         />
       </div>
     );
