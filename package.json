@@ -1,0 +1,20 @@
+{
+  "name": "usermanager",
+  "version": "1.0.0",
+  "description": "app to manage users",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rutkevicius0/JS-User-manager-app.git"
+  },
+  "author": "O.R.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Rutkevicius0/JS-User-manager-app/issues"
+  },
+  "homepage": "https://github.com/Rutkevicius0/JS-User-manager-app#readme"
+}
