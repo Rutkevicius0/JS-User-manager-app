@@ -20,6 +20,9 @@ const UserSchema = new Schema(
       type: String,
       required: true,
     },
+    isEditOn: {
+      type: Boolean,
+    },
   },
   { timestamps: true },
 );
