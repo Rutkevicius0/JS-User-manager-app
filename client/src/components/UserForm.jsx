@@ -7,65 +7,80 @@ class UserForm extends Component {
       age: '',
       email: '',
       password: '',
+      isEditOn: false,
     },
   };
 
   handleChange = (event) => {
     console.log(event.target);
     this.setState({
-      entryData: {
-        ...this.state.entryData,
-        [event.target.name]: event.target.value,
+      newUserData: {
+        ...this.state.newUserData,
+        [event.target.id]: event.target.value,
       },
     });
+  };
+  handleClearForm() {
+    const newUserData = {
+      username: '',
+      age: '',
+      email: '',
+      password: '',
+    };
+    this.setState({ newUserData });
+  }
+  handleSubmit = async (event) => {
+    event.preventDefault();
+    this.props.onAddNewUser(this.state.newUserData);
+    this.props.onToGetAllUsers();
   };
   render() {
     const { username, age, email, password } = this.state.newUserData;
     return (
       <div className="form-container">
         <h2>Create New User</h2>
-        <form>
-          <div class="form-group">
-            <label for="username">Username</label>
+        <form onSubmit={this.handleSubmit}>
+          <div className="form-group">
+            <label htmlFor="username">Username</label>
             <input
               type="text"
-              class="form-control"
+              className="form-control"
               id="username"
               onChange={this.handleChange}
               value={username}
             />
           </div>
-          <div class="form-group">
-            <label for="age">Age</label>
+          <div className="form-group">
+            <label htmlFor="age">Age</label>
             <input
               type="number"
-              class="form-control"
+              className="form-control"
               id="age"
               onChange={this.handleChange}
               value={age}
             />
           </div>
-          <div class="form-group">
-            <label for="email">Email address</label>
+          <div className="form-group">
+            <label htmlFor="email">Email address</label>
             <input
               type="email"
-              class="form-control"
+              className="form-control"
               id="email"
               onChange={this.handleChange}
               value={email}
             />
           </div>
-          <div class="form-group">
-            <label for="password">Password</label>
+          <div className="form-group">
+            <label htmlFor="password">Password</label>
             <input
               type="password"
-              class="form-control"
+              className="form-control"
               id="password"
               onChange={this.handleChange}
               value={password}
             />
           </div>
-          <button type="submit" class="btn btn-primary">
+          <button type="submit" className="btn btn-primary">
             Submit
           </button>
         </form>
