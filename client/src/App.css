@@ -1,7 +1,24 @@
 * {
   box-sizing: border-box;
+  margin: 0;
 }
 body {
   background-color: dimgray;
+  margin: 0;
+}
+.app-container {
   width: 80%;
+  margin: 2em auto;
+  background-color: rgb(185, 139, 139);
+  min-height: 100vh;
+  padding: 2em;
+}
+.app-title {
+  text-align: center;
+}
+
+/* FORM */
+.form-container {
+  width: 50%;
+  margin: 2em auto;
 }

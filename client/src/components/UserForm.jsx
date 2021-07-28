@@ -38,7 +38,7 @@ class UserForm extends Component {
     const { username, age, email, password } = this.state.newUserData;
     return (
       <div className="form-container">
-        <h2>Create New User</h2>
+        <h2 className="form-title">Sukurti naują vartotoją</h2>
         <form onSubmit={this.handleSubmit}>
           <div className="form-group">
             <label htmlFor="username">Username</label>
