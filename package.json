@@ -4,7 +4,7 @@
   "description": "app to manage users",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "node server.js & npm start --prefix client",
     "dev": "nodemon server.js"
   },
   "repository": {
