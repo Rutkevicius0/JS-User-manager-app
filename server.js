@@ -6,7 +6,6 @@ const app = express();
 const cors = require('cors');
 
 const mongoose = require('mongoose');
-const { connect } = require('mongodb');
 
 //Middleware
 app.use(cors());
